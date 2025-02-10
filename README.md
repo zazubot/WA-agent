@@ -1,5 +1,7 @@
 # Zazu AI Assistant
 
+<img alt="logo" src="img/project_overview_diagram.jpg" width=600 />
+
 > Think of it as a modern reinterpretation of the Turing Test 🤣
 
 Welcome to the **Zazu AI Assistant** course! By the end of this course, you'll have built your own Zazu, capable of:
@@ -15,23 +17,38 @@ Excited? Let’s get started! 🚀
 
 ---
 
-## 🏗️ Tech Stack
+## The tech stack
 
-Technology
-
-Description
-
-**Groq** powers the project with Llama 3.3, Llama 3.2 Vision, and Whisper. Groq models are awesome (and fast!!).
-
-**Qdrant** serves as the long-term database, enabling Zazu to recall details you shared months ago.
-
-**Google Cloud Run** is used for easy container deployment on GCP.
-
-**LangGraph** helps in building production-ready workflows.
-
-**ElevenLabs** provides high-quality text-to-speech models.
-
-**Together AI** is behind Zazu’s image generation process.
+<table>
+  <tr>
+    <th>Technology</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><img src="img/groq_logo.png" width="100" alt="Groq Logo"/></td>
+    <td>Powering the project with Llama 3.3, Llama 3.2 Vision, and Whisper. Groq models are awesome (and fast!!)</td>
+  </tr>
+  <tr>
+    <td><img src="img/qdrant_logo.png" width="100" alt="Qdrant Logo"/></td>
+    <td>Serving as the long-term database, enabling our agent to recall details you shared months ago.</td>
+  </tr>
+  <tr>
+    <td><img src="img/cloud_run_logo.png" width="100" alt="Cloud Run Logo"/></td>
+    <td>Deploying your containers easily to Google Cloud Platform</td>
+  </tr>
+  <tr>
+    <td><img src="img/langgraph_logo.png" width="100" alt="LangGraph Logo"/></td>
+    <td>Learn how to build production-ready LangGraph workflows</td>
+  </tr>
+  <tr>
+    <td><img src="img/elevenlabs_logo.png" width="100" alt="ElevenLabs Logo"/></td>
+    <td>Amazing TTS models</td>
+  </tr>
+  <tr>
+    <td><img src="img/together_logo.png" width="100" alt="Together AI Logo"/></td>
+    <td>Behind Zazu's image generation process</td>
+  </tr>
+</table>
 
 ---
 
