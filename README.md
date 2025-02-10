@@ -1,5 +1,5 @@
 <p align="center">
-        <img alt="logo" src="img/project_overview_diagram.gif" width=600 />
+        <img alt="logo" src="img/project_overview_diagram.jpg" width=600 />
     <h1 align="center">📱 Zazu 📱</h1>
     <h3 align="center">Turning the Turing Test into a Whatsapp Agent</h3>
 </p>
