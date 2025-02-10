@@ -13,37 +13,71 @@ from zazu_bot.settings import settings
 
 
 class MemoryAnalysis(BaseModel):
-    """Result of analyzing a message for memory-worthy content."""
+    """
+    Represents the result of analyzing a message for memory storage.
+    
+    Determines if a message contains important information 
+    and provides a formatted memory if applicable.
+    """
 
     is_important: bool = Field(
         ...,
-        description="Whether the message is important enough to be stored as a memory",
+        description="Whether the message contains significant information to store",
     )
     formatted_memory: Optional[str] = Field(
-        ..., description="The formatted memory to be stored"
+        ..., description="Processed and structured memory content"
     )
 
 
 class MemoryManager:
-    """Manager class for handling long-term memory operations."""
+    """
+    Manages long-term memory operations for the AI system.
+    
+    Handles memory extraction, storage, and retrieval using 
+    a vector store and language model for analysis.
+    """
 
     def __init__(self):
+        """
+        Initialize memory management components:
+        - Vector store for persistent memory storage
+        - Logger for tracking memory operations
+        - Language model for memory analysis
+        """
         self.vector_store = get_vector_store()
         self.logger = logging.getLogger(__name__)
         self.llm = ChatGroq(
             model=settings.SMALL_TEXT_MODEL_NAME,
             api_key=settings.GROQ_API_KEY,
-            temperature=0.1,
+            temperature=0.1,  # Low temperature for consistent analysis
             max_retries=2,
         ).with_structured_output(MemoryAnalysis)
 
     async def _analyze_memory(self, message: str) -> MemoryAnalysis:
-        """Analyze a message to determine importance and format if needed."""
+        """
+        Analyze a message to determine its importance for long-term memory.
+        
+        Uses a language model to evaluate and format the message.
+        
+        Args:
+            message: Input message text to analyze
+        
+        Returns:
+            MemoryAnalysis with importance and formatted memory
+        """
         prompt = MEMORY_ANALYSIS_PROMPT.format(message=message)
         return await self.llm.ainvoke(prompt)
 
     async def extract_and_store_memories(self, message: BaseMessage) -> None:
-        """Extract important information from a message and store in vector store."""
+        """
+        Extract and store important memories from incoming messages.
+        
+        Skips non-human messages and checks for memory uniqueness.
+        Stores unique, important memories in the vector store.
+        
+        Args:
+            message: Message to potentially convert into a memory
+        """
         if message.type != "human":
             return
 
@@ -64,13 +98,23 @@ class MemoryManager:
             self.vector_store.store_memory(
                 text=analysis.formatted_memory,
                 metadata={
-                    "id": str(uuid.uuid4()),
-                    "timestamp": datetime.now().isoformat(),
+                    "id": str(uuid.uuid4()),  # Generate unique identifier
+                    "timestamp": datetime.now().isoformat(),  # Record creation time
                 },
             )
 
     def get_relevant_memories(self, context: str) -> List[str]:
-        """Retrieve relevant memories based on the current context."""
+        """
+        Retrieve memories most relevant to the given context.
+        
+        Searches vector store and logs retrieved memories.
+        
+        Args:
+            context: Text to find relevant memories for
+        
+        Returns:
+            List of memory texts sorted by relevance
+        """
         memories = self.vector_store.search_memories(context, k=settings.MEMORY_TOP_K)
         if memories:
             for memory in memories:
@@ -80,12 +124,25 @@ class MemoryManager:
         return [memory.text for memory in memories]
 
     def format_memories_for_prompt(self, memories: List[str]) -> str:
-        """Format retrieved memories as bullet points."""
+        """
+        Convert memory list into a formatted string for prompting.
+        
+        Args:
+            memories: List of memory texts
+        
+        Returns:
+            Memories formatted as bullet-point list, or empty string
+        """
         if not memories:
             return ""
         return "\n".join(f"- {memory}" for memory in memories)
 
 
 def get_memory_manager() -> MemoryManager:
-    """Get a MemoryManager instance."""
+    """
+    Singleton-like function to retrieve Memory Manager instance.
+    
+    Returns:
+        MemoryManager for handling long-term memory operations
+    """
     return MemoryManager()
