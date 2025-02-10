@@ -1,107 +1,82 @@
-<p align="center">
-        <img alt="logo" src="img/project_overview_diagram.jpg" width=600 />
-    <h1 align="center">📱 Zazu 📱</h1>
-    <h3 align="center">Turning the Turing Test into a Whatsapp Agent</h3>
-</p>
+# Zazu AI Assistant
 
-<p align="center">
-    <img alt="logo" src="img/whatsapp_logo.png" width=100 />
-</p>
+> Think of it as a modern reinterpretation of the Turing Test 🤣
 
-## Course Overview
+Welcome to the **Zazu AI Assistant** course! By the end of this course, you'll have built your own Zazu, capable of:
 
-<p align="center">
-    <img alt="logo" src="img/LLM_for_WA.png" width=500 />
-</p>
+✅ Sending and receiving WhatsApp messages 📲  
+✅ Understanding your voice commands 🗣️  
+✅ Recognizing and processing images 🖼️  
+✅ Sending voice notes back 🎤  
+✅ Sharing updates about its daily activities 🚣  
+✅ Sending you images of its current activities 🖼️
 
-What happens when [two ML Engineers](#contributors) with a love for sci-fi movies team up? 🤔
+Excited? Let’s get started! 🚀
 
-> You can think of it as a modern reinterpretation of the Turing Test 🤣
+---
 
-By the end of this course, you'll have built your own Zazu too, capable of:
+## 🏗️ Tech Stack
 
-- Receiving and sending Whatsapp messages 📲
-- Understanding your voice 🗣️
-- Recognizing your images 🖼️
-- Sending voice notes back 🎤
-- Sharing updates about its "daily activities" 🚣
-- Sending you images of its current activities 🖼️
+Technology
 
-Excited? Let's get started!
+Description
 
-## The tech stack
+**Groq** powers the project with Llama 3.3, Llama 3.2 Vision, and Whisper. Groq models are awesome (and fast!!).
 
-<table>
-  <tr>
-    <th>Technology</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><img src="img/groq_logo.png" width="100" alt="Groq Logo"/></td>
-    <td>Powering the project with Llama 3.3, Llama 3.2 Vision, and Whisper. Groq models are awesome (and fast!!)</td>
-  </tr>
-  <tr>
-    <td><img src="img/qdrant_logo.png" width="100" alt="Qdrant Logo"/></td>
-    <td>Serving as the long-term database, enabling our agent to recall details you shared months ago.</td>
-  </tr>
-  <tr>
-    <td><img src="img/cloud_run_logo.png" width="100" alt="Cloud Run Logo"/></td>
-    <td>Deploying your containers easily to Google Cloud Platform</td>
-  </tr>
-  <tr>
-    <td><img src="img/langgraph_logo.png" width="100" alt="LangGraph Logo"/></td>
-    <td>Learn how to build production-ready LangGraph workflows</td>
-  </tr>
-  <tr>
-    <td><img src="img/elevenlabs_logo.png" width="100" alt="ElevenLabs Logo"/></td>
-    <td>Amazing TTS models</td>
-  </tr>
-  <tr>
-    <td><img src="img/together_logo.png" width="100" alt="Together AI Logo"/></td>
-    <td>Behind Zazu's image generation process</td>
-  </tr>
-</table>
+**Qdrant** serves as the long-term database, enabling Zazu to recall details you shared months ago.
 
-## Course Outline
+**Google Cloud Run** is used for easy container deployment on GCP.
 
-This course is divided into 6 lessons. Each lesson is a step forward in building Zazu, and it has a written and video version.
+**LangGraph** helps in building production-ready workflows.
 
-These two versions are complementaty, so we recommend you to go through both, as it will improve your learning experience. Don't forget to check the [Before we start](#before-we-start) section to get everything ready for the course.
+**ElevenLabs** provides high-quality text-to-speech models.
 
-### 🛠️ Lesson 0: Before we begin
+**Together AI** is behind Zazu’s image generation process.
 
-This project uses a lot of services and tools, so we need to get everything ready before we start. Follow the instructions in [this document](docs/before_we_begin.md).
+---
 
-### 🕸️ Lesson 2: Zazu's brain is just a graph
+## 📚 Course Outline
 
-Date: **2025-02-12**
+This course consists of **six structured lessons**, each with a written and video version. We recommend going through both for an optimal learning experience. Make sure to check the Before We Start section to get everything set up.
 
-> WIP ... 👷
+### 🛠️ Lesson 0: Before We Begin
 
-### 🧠 Lesson 3: Unlocking Zazu's memories
+📅 **Date:** _Before starting_
 
-Date: **2025-02-19**
+- This project requires several tools and services. Follow the setup instructions in this document to prepare.
 
-> WIP ... 👷
+### 🕸️ Lesson 1: Zazu's Brain is Just a Graph
 
-### 🗣️ Lesson 4: Giving Zazu a Voice
+📅 **Date:** _2025-02-12_
 
-Date: **2025-02-26**
+> Work in Progress... 👷
 
-> WIP ... 👷
+### 🧠 Lesson 2: Unlocking Zazu's Memories
 
-### 👀 Lesson 5: Zazu learns to see
+📅 **Date:** _2025-02-19_
 
-Date: **2025-03-05**
+> Work in Progress... 👷
 
-> WIP ... 👷
+### 🗣️ Lesson 3: Giving Zazu a Voice
 
-### 📱 Lesson 6: Zazu installs Whatsapp
+📅 **Date:** _2025-02-26_
 
-Date: **2025-03-12**
+> Work in Progress... 👷
 
-> WIP ... 👷
+### 👀 Lesson 4: Zazu Learns to See
 
-## License
+📅 **Date:** _2025-03-05_
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+> Work in Progress... 👷
+
+### 📱 Lesson 5: Zazu Installs WhatsApp
+
+📅 **Date:** _2025-03-12_
+
+> Work in Progress... 👷
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License**. See the LICENSE file for more details.
